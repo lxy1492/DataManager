@@ -1,0 +1,1 @@
+{"Port": "2020", "DataPath": "./DataBase", "ConfigPath": "./DataBase/Config/config.json", "UserPath": "./DataBase/User", "UserIDPool": "./DataBase/User/UID.json", "CheckSignTime": 180, "Admin": "admin", "AdminID": "001", "AdminKey": "123456", "CustomerDataPath": "./DataBase/Customer", "modelPath": "./DataBase/model.json"}

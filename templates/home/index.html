@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'home/css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/font-awesome.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/templatemo-style.css' %}">
+        <style>
+            #customerlist{
+                height: 200px;
+                {#overflow: scroll;#}
+                overflow-x: auto;
+                overflow-y: scroll;
+            }
+            .eachCustomerName{
+                {#float:left; /* 往左浮动 */#}
+                {#display:block; /* 将链接设为块级元素 */#}
+                {#width:150px; /* 设置宽度 */#}
+                {#height:30px; /* 设置高度 */#}
+                {#line-height:30px; /* 设置行高，将行高和高度设置同一个值，可以让单行文本垂直居中 */#}
+                {#text-align:center; /* 居中对齐文字 */#}
+                {#background:#3A4953; /* 设置背景色 */#}
+                {#color:#fff; /* 设置文字颜色 */#}
+                text-decoration:none; /* 去掉下划线 */
+                {#border-right:1px solid #000; /* 在左侧加上分隔线 */#}
+                list-style: none;
+
+            }
+            #modellist{
+                height: 260px;
+                {#overflow: scroll;#}
+                overflow-x: auto;
+                overflow-y: scroll;
+            }
+        </style>
+        <script src="{% static 'home/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+        <script>
+            function goToSignIn() {
+                window.location.href = "/login/";
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="site-bg"></div>
+        <div class="site-bg-overlay"></div>
+
+        <!-- TOP HEADER -->
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <p onclick="goToSignIn()" class="phone-info">{{ ip }} | 登录用户：<a href="#" id="username" >{{ user }}</a></>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-linkedin"></a></li>
+                                <li><a href="#" class="fa fa-dribbble"></a></li>
+                                <li><a href="#" class="fa fa-rss"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .top-header -->
+
+
+        <div class="visible-xs visible-sm responsive-menu">
+            <a href="#" class="toggle-menu">
+                <i class="fa fa-bars"></i> Show Menu
+            </a>
+            <div class="show-menu">
+                <ul class="main-menu">
+                    <li>
+                        <a class="show-1 active homebutton" href="#"><i class="fa fa-home"></i>主页</a>
+                    </li>
+                    <li>
+                        <a class="show-2 aboutbutton" href="#"><i class="fa fa-user"></i>客户</a>
+                    </li>
+                    <li>
+                        <a class="show-3 projectbutton" href="#"><i class="fa fa-camera"></i>产品</a>
+                    </li>
+                    <li>
+                        <a class="show-5 contactbutton" href="#"><i class="fa fa-envelope"></i>记录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+		<div class="copyrights">Collect from <a href="/" >客户数据管理</a></div>
+        <div class="container" id="page-content">
+            <div class="row">
+
+
+                
+                <div class="col-md-9 col-sm-12 content-holder">
+                    <!-- CONTENT -->
+                    <div id="menu-container">
+                        
+                        <div class="logo-holder logo-top-margin">
+                            <a href="#" class="site-brand"><img id="logoImage" src="{% static 'home/images/logo.png'%}" alt=""></a>
+                        </div>
+                        
+                        
+                        <div id="menu-1" class="homepage home-section text-center">
+                            <div class="welcome-text">
+                                <h2>{{ hello }} <strong>{{ hometitle }}</strong></h2>
+                                <p>Rectangle is free mobile template brought to you by <span class="orange">template</span><span class="green">mo</span>.com website. You can download, edit and use this layout for any purpose. Please tell your friends about our website. Thank you.</p>
+                                <form action="#" method="get" class="subscribe-form">
+                                    <div class="row">
+                                        <fieldset class="col-md-offset-2 col-md-6">
+                                            <input name="subscribe-email" type="email" class="email" id="subscribe-email" placeholder="输入查询内容...">
+                                        </fieldset>
+                                        <fieldset class="col-md-4 button-holder">
+                                            <input name="submit" type="submit" class="button default" id="submit" value="查  询">
+                                        </fieldset>
+                                    </div>
+                                    <p class="subscribe-text">输入客户姓名，电话查询记录</p>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="menu-2" class="content about-section">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="box-content profile">
+                                        <h3 class="widget-title" >客户资料</h3>
+                                        <div class="profile-thumb">
+                                            <img id="customerImage" src="{% static 'home/images/8.jpg' %}" alt="">
+                                        </div>
+                                        <div class="profile-content">
+                                            <h5 class="profile-name" id="customerName">客户姓名</h5>
+                                            <span class="profile-role" id="contact">联系电话</span>
+                                            <p id="customerInfo">客户姓名,购买产品,购买日期 。<a rel="nofollow" href="#">编辑此客户</a> 暂无关于此客户的描述信息，点击”编辑此客户“添加描述。<br><br>
+											Change icons by <a rel="nofollow" href="#/font-awesome-icon-world-map/">Font Awesome</a> (version 4). Example: <span class="blue">&lt;i class=&quot;fa fa-refresh&quot;&gt;&lt;/i&gt;</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="box-content">
+                                        <h3 class="widget-title">客户列表</h3>
+                                         <input placeholder="输入姓名或电话" id="customerFilter">
+                                        <div id="customerlist">
+                                        </div>
+{#                                        <p>Vestibulum pellentesque ante sit amet tristique hendrerit. Sed consequat, nunc lobortis faucibus pretium, enim nibh blandit est, nec sollicitudin est quam a neque. Aenean eget malesuada justo.</p>#}
+{#                                        <div class="about-social">#}
+{#                                            <ul>#}
+{#                                                <li><a href="#" class="fa fa-facebook"></a></li>#}
+{#                                                <li><a href="#" class="fa fa-twitter"></a></li>#}
+{#                                                <li><a href="#" class="fa fa-linkedin"></a></li>#}
+{#                                                <li><a href="#" class="fa fa-dribbble"></a></li>#}
+{#                                            </ul>#}
+{#                                        </div>#}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5">
+                                    <div class="box-content">
+                                        <h3 class="widget-title">购买产品</h3>
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/7.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4 id="productionmodel">购买产品型号</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-sm-7">
+                                    <div class="box-content">
+                                        <h3 class="widget-title">维修记录</h3>
+                                        <ul class="progess-bars">
+                                            <li>
+                                                <span>HTML CSS 80%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span>PHOTOSHOP 95%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span>WORDPRESS 70%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span>PHP mySQL 50%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="menu-3" class="content gallery-section">
+                            <div class="box-content">
+                                <h3 class="widget-title">产品预览</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/1.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/2.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/3.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/4.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/5.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="project-item">
+                                            <img src="{% static 'home/images/6.jpg' %}" alt="">
+                                            <div class="project-hover">
+                                                <h4>产品型号：XXX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-pages">
+                                    <ul>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">...</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="menu-4" class="content contact-section">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="box-content">
+                                        <h3 class="widget-title">添加记录或创建客户</h3>
+                                        <form class="contact-form">
+                                            <fieldset>
+                                                <input type="text" class="name" id="name" placeholder="客户姓名">
+                                            </fieldset> 
+                                            <fieldset>
+                                                <input type="email" class="email" id="email" placeholder="联系电话">
+                                            </fieldset> 
+                                            <fieldset>
+                                                <input type="date" class="subject" id="subject" placeholder="购买时间">
+                                            </fieldset>
+                                            <fieldset>
+                                                <textarea name="message" id="message" cols="30" rows="4" placeholder="其他配套"></textarea>
+                                            </fieldset>
+                                            <fieldset>
+                                                <input type="text" class="button" id="button" value="添加记录">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="box-content">
+                                        <h3 class="widget-title">选择产品</h3>
+                                        <input id="iputmodel" placeholder="输入产品型号">
+                                        <div id="modellist">
+
+                                        </div>
+{#                                        <p>Sed ullamcorper, risus a tincidunt efficitur, massa mauris ultricies leo, eu interdum eros erat non augue. <br><br>#}
+{#										Suspendisse ornare sollicitudin lectus non egestas. Nam fermentum imperdiet ligula congue venenatis. </p>#}
+                                        <div class="about-social">
+                                            <ul>
+                                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                                <li><a href="#" class="fa fa-linkedin"></a></li>
+                                                <li><a href="#" class="fa fa-dribbble"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 hidden-sm">
+                    
+                    <nav id="nav" class="main-navigation hidden-xs hidden-sm">
+                        <ul class="main-menu">
+                            <li>
+                                <a class="show-1 active homebutton" href="#"><i class="fa fa-home"></i>主 页</a>
+                            </li>
+                            <li>
+                                <a class="show-2 aboutbutton" href="#"><i class="fa fa-user"></i>客 户</a>
+                            </li>
+                            <li>
+                                <a class="show-3 projectbutton" href="#"><i class="fa fa-camera"></i>产 品</a>
+                            </li>
+                            <li>
+                                <a class="show-5 contactbutton" href="#"><i class="fa fa-envelope"></i>记 录</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- SITE-FOOTER -->
+        <div class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright &copy; 2084 MD_DATA | About us: <a href="/aboutus/" target="_blank" title="关于我们">关于我们</a> - signOut <a href="/login/signOut.html" title="退出登录" target="_blank">退出登录</a></p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .site-footer -->
+
+        <script src="{% static 'home/js/vendor/jquery-1.10.2.min.js' %}"></script>
+        <script src="{% static 'home/js/plugins.js' %}"></script>
+        <script src="{% static 'home/js/main.js' %}"></script>
+		<!-- templatemo 439 rectangle -->
+    <script src="{% static 'login/login.js' %}"></script>
+        <script src="{% static 'customer/customer.js' %}"></script>
+        <script src="{% static 'home/home.js' %}"></script>
+    <script>
+        checkSignIn();
+        username = getNameByID();
+
+        id_ = localStorage.getItem("id");
+        {#console.log(id_)#}
+
+        $.ajax({
+            url:"/server/getuserNameByID/",
+            data:{id:id_},
+            dataType:"json",
+            async:false,
+            success:function (data) {
+                {#console.log(data);#}
+                if(data["result"]=="success"){
+                    r = data["name"];
+                    $("#username").text(r);
+                }else{
+                    r = "未登录";
+                }
+            }
+        });
+
+        getWebQRcode();
+
+        var customerList = getCustomerList();
+        {#console.log(customerList);#}
+        for (var i=0;i<customerList.length;i++){
+            each_div = document.createElement("div");
+            each_div.className = "eachCustomerDIV";
+            eachName = document.createElement("li");
+            eachName.className = "eachCustomerName";
+            {#eachName.id = customerList[i]["name"];#}
+            each_div.setAttribute("data-customerName",customerList[i]["name"]);
+            eachName.innerText = customerList[i]["name"]+" "+customerList[i]["model"];
+            each_div.appendChild(eachName);
+            $("#customerlist").append(each_div);
+        }
+
+        $("#customerName").text(customerList[0]["name"]);
+        $("#contact").text(customerList[0]["phone"]);
+
+    </script>
+    <script>
+        $("body").on("click",".eachCustomerDIV",function () {
+            // 获取客户姓名
+            customername = this.getAttribute("data-customerName");
+            {#console.log(customername);#}
+            setCustomerInfo(customername);
+        });
+    </script>
+    <script>
+        $("#customerFilter").on("keyup paste",function () {
+            {#console.log($("#customerFilter").val());#}
+            v = $("#customerFilter").val();
+            $("#customerlist").empty();
+            if (isEmpty(v)){
+                for (var i=0;i<customerList.length;i++){
+                    each_div = document.createElement("div");
+                    each_div.className = "eachCustomerDIV";
+                    eachName = document.createElement("li");
+                    eachName.className = "eachCustomerName";
+                    {#eachName.id = customerList[i]["name"];#}
+                    each_div.setAttribute("data-customerName",customerList[i]["name"]);
+                    eachName.innerText = customerList[i]["name"]+" "+customerList[i]["model"];
+                    each_div.appendChild(eachName);
+                    $("#customerlist").append(each_div);
+                }
+            }else {
+                for(var i=0;i<customerList.length;i++){
+                    nameContain = stringContains(customerList[i]["name"],v);
+                    if(customerList[i]["phone"]!=null){
+                        phoneContain = stringContains(customerList[i]["phone"],v);
+                    }else{
+                        phoneContain = false;
+                    }
+                    {#phoneContain = stringContains(customerList[i]["phone"],v);#}
+                    if (nameContain||phoneContain){
+                        each_div = document.createElement("div");
+                    each_div.className = "eachCustomerDIV";
+                    eachName = document.createElement("li");
+                    eachName.className = "eachCustomerName";
+                    {#eachName.id = customerList[i]["name"];#}
+                    each_div.setAttribute("data-customerName",customerList[i]["name"]);
+                    eachName.innerText = customerList[i]["name"]+" "+customerList[i]["model"];
+                    each_div.appendChild(eachName);
+                    $("#customerlist").append(each_div);
+                    }
+                }
+            }
+        });
+
+        models = getModels();
+        {#console.log(models);#}
+        for (var i=0;i<models.length;i++){
+            p = document.createElement("p");
+            p.className = "eachModel";
+            p.setAttribute("data-model",models[i]);
+            p.innerText = models[i];
+            $("#modellist").append(p);
+        }
+
+    </script>
+    <script>
+        $("body").on("click","#button",function () {
+            addName = $("#name").val();
+            phone = $("#email").val();
+            cdate = $("#subject").val();
+            others = $("#message").val();
+            model = $("#iputmodel").val();
+            if( isEmpty(addName)){
+                alert("客户名不能为空！");
+            }else{
+                if (isEmpty(model)){
+                    alert("请输入购买型号");
+                }else{
+                    data = {
+                        "name":addName,
+                        "phone":phone,
+                        "date":cdate,
+                        "others":others,
+                        "model":model,
+                    }
+                    r = addCustomer(data);
+                    if(r["result"]=="success"){
+                        $("#name").val("");
+                        $("#email").val("");
+                        $("#subject").val("");
+                        $("#message").val("");
+                        $("#iputmodel").val("");
+
+                        // 刷新客户列表和产品型号列表
+                        $("#customerlist").empty();
+                         var customerList = getCustomerList();
+                        for (var i=0;i<customerList.length;i++){
+                            each_div = document.createElement("div");
+                            each_div.className = "eachCustomerDIV";
+                            eachName = document.createElement("li");
+                            eachName.className = "eachCustomerName";
+                            {#eachName.id = customerList[i]["name"];#}
+                            each_div.setAttribute("data-customerName",customerList[i]["name"]);
+                            eachName.innerText = customerList[i]["name"]+" "+customerList[i]["model"];
+                            each_div.appendChild(eachName);
+                            $("#customerlist").append(each_div);
+                        }
+
+                        $("#customerName").text(customerList[0]["name"]);
+                        $("#contact").text(customerList[0]["phone"]);
+                        models = getModels();
+                        {#console.log(models);#}
+                        $("#modellist").empty();
+                        for (var i=0;i<models.length;i++){
+                            p = document.createElement("p");
+                            p.className = "eachModel";
+                            p.setAttribute("data-model",models[i]);
+                            p.innerText = models[i];
+                            $("#modellist").append(p);
+                        }
+
+
+                    }else{
+                        alert(r["result"]);
+                    }
+                }
+            }
+        });
+
+    </script>
+    <script>
+        $("body").on("click",".eachModel",function () {
+           v = this.getAttribute("data-model");
+           $("#iputmodel").val(v);
+        });
+    </script>
+    </body>
+</html>

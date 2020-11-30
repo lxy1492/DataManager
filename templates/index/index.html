@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'login/login.js' %}"></script>
+    <script>
+        checkSignIn();
+    </script>
+</head>
+<body>
+<a href="/login/">登录</a>
+<a href="/login/signOut.html">退出登录</a>
+</body>
+</html>

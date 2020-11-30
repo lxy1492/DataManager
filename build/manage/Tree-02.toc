@@ -1,0 +1,5 @@
+('c:\\users\\horizon\\desktop\\datamanager\\venv\\lib\\site-packages\\pillow-7.0.0-py3.7-win-amd64.egg',
+ None,
+ {'*.pyw', '*.py', '*.pyd', '*.pyc', 'EGG-INFO', '*.cp37-win_amd64.pyd'},
+ 'DATA',
+ [])
